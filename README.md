@@ -59,15 +59,6 @@ Need to match custom error banners or toasts on your project? Add your CSS selec
 
 ---
 
-## Быстрый старт (RU)
-
-1. Скачайте архив [`releases/bug-capture-assistant-0.1.0-chrome.zip`](./releases/bug-capture-assistant-0.1.0-chrome.zip) и распакуйте его в любую папку.
-2. Откройте в браузере **`chrome://extensions`** и включите **Developer mode** (Режим разработчика).
-3. Нажмите **Load unpacked** (Загрузить распакованное расширение) и выберите распакованную папку (внутри которой лежит `manifest.json`).
-4. Откройте любой сайт, нажмите иконку **Bug Capture Assistant** → **Start capture**, протестируйте страницу и нажмите **Stop and review** → **Create ticket** → **Copy ticket**.
-
----
-
 ## Feedback & Bug Reports
 
 Testing the demo? Share your thoughts, edge cases, or feature requests in [**Issues**](https://github.com/Avngrss/bug-capture-assistant-extension/issues):
