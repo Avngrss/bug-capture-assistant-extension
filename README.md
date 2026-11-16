@@ -1,6 +1,6 @@
 # Bug Capture Assistant
 
-**Bug Capture Assistant** is a local-first Chrome extension (Manifest V3) for manual and exploratory QA testing. Instead of retracing steps, digging through DevTools Console and Network tabs, taking screenshots by hand, and writing a bug ticket from memory, you test the page as usual—and copy a structured QA ticket when something breaks.
+**Bug Capture Assistant** is a local Chrome extension (Manifest V3) for manual and exploratory testing. You still test the page the way you already do, DevTools included. While capture is on, it keeps the steps, page alerts, console errors, failed requests, and a screenshot of that tab, so the ticket comes from what happened instead of from memory.
 
 ---
 
