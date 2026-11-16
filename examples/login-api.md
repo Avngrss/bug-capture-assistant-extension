@@ -11,16 +11,15 @@ After clicking “Sign in”, the POST request to /api/auth/session fails with H
 
 ## Steps to Reproduce
 1. Open the home page.
-2. Click “Sign in”.
-3. Open the login page.
-4. Enter a value in the Email field.
-5. Click “Sign in”.
+2. Click “Sign in” and open the login page.
+3. Enter “qa.user@example.com” in the Email field.
+4. Click “Sign in”.
 
 ## Actual Result
 The POST request to /api/auth/session fails with HTTP 500.
 
 ## Expected Result
-This request should succeed.
+The request should succeed (HTTP 2xx).
 
 ## Severity
 Major
@@ -32,5 +31,7 @@ High
 api, auth
 
 ## Environment
-https://demo-toolshop.test/login
+URL: https://demo-toolshop.test/login
+Browser: Chrome 156
+OS: Windows 10
 ```

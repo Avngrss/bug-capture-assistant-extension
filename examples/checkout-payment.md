@@ -24,7 +24,7 @@ Also captured: The POST request to /api/payments fails with HTTP 502. The browse
 The page shows “Payment could not be processed. Please try again later.”
 
 ## Expected Result
-This message should not appear.
+The operation should complete without this error.
 
 ## Severity
 Major
@@ -36,5 +36,7 @@ High
 ui, console, api, checkout
 
 ## Environment
-https://demo-toolshop.test/checkout
+URL: https://demo-toolshop.test/checkout
+Browser: Chrome 156
+OS: Windows 10
 ```

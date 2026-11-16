@@ -14,15 +14,14 @@ Shown as a page alert.
 ## Steps to Reproduce
 1. Open the home page.
 2. Open the hand tools page.
-3. Click “Combination Pliers”.
-4. Open the product page.
-5. Click “Add to cart”.
+3. Click “Combination Pliers” and open the product page.
+4. Click “Add to cart”.
 
 ## Actual Result
 The page shows “Only 3 items left in stock”.
 
 ## Expected Result
-This message should not appear.
+This message should not appear for this action.
 
 ## Severity
 Major
@@ -34,5 +33,7 @@ High
 ui, product
 
 ## Environment
-https://demo-toolshop.test/product/01M69B1HW8E19B80PAP2YK9WF0
+URL: https://demo-toolshop.test/product/01M69B1HW8E19B80PAP2YK9WF0
+Browser: Chrome 156
+OS: Windows 10
 ```

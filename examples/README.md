@@ -4,13 +4,13 @@ Each ticket here was produced by the built extension, not written by hand. A Pla
 
 The only edit: the local server address (`http://127.0.0.1:<port>`) is replaced with `https://demo-toolshop.test`.
 
-| File                                             | What happens on the page                     |
-| ------------------------------------------------ | -------------------------------------------- |
-| [product-stock.md](./product-stock.md)           | Stock warning banner                         |
-| [checkout-payment.md](./checkout-payment.md)     | Alert + console error + HTTP 502 in one card |
-| [login-api.md](./login-api.md)                   | API returns 500, page shows nothing          |
-| [contact-validation.md](./contact-validation.md) | Inline validation message                    |
-| [settings-rejection.md](./settings-rejection.md) | Unhandled promise rejection only             |
+| File                                             | What happens on the page                                 |
+| ------------------------------------------------ | -------------------------------------------------------- |
+| [product-stock.md](./product-stock.md)           | Stock warning banner                                     |
+| [checkout-payment.md](./checkout-payment.md)     | Alert + console error + HTTP 502 in one card             |
+| [login-api.md](./login-api.md)                   | API returns 500, page shows nothing; password not stored |
+| [contact-validation.md](./contact-validation.md) | Inline validation; non-sensitive values in steps         |
+| [settings-rejection.md](./settings-rejection.md) | Unhandled promise rejection only                         |
 
 Screenshots in `assets/` come from the same run.
 

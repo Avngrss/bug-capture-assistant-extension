@@ -1,6 +1,6 @@
 # Contact form: validation message
 
-Invalid email, Send message. The form shows an inline `role="alert"` hint. Typed values are not stored, only the field name.
+Invalid email, Send message. The form shows an inline `role="alert"` hint. Non-sensitive typed values appear in the steps.
 
 ```markdown
 ## Title
@@ -14,24 +14,27 @@ Shown as a page alert.
 ## Steps to Reproduce
 1. Open the home page.
 2. Open the contact page.
-3. Enter a value in the Your email field.
-4. Click “Send message”.
+3. Enter “qa.user-at-example” in the Your email field.
+4. Enter “Where is my order?” in the Message field.
+5. Click “Send message”.
 
 ## Actual Result
 The page shows “Enter a valid email address, e.g. name@example.com”.
 
 ## Expected Result
-This message should not appear.
+The form should accept this input, or validation should match the entered data.
 
 ## Severity
-Major
+Minor
 
 ## Priority
-High
+Medium
 
 ## Labels
 ui, contact
 
 ## Environment
-https://demo-toolshop.test/contact
+URL: https://demo-toolshop.test/contact
+Browser: Chrome 156
+OS: Windows 10
 ```

@@ -33,5 +33,7 @@ Low
 console, account
 
 ## Environment
-https://demo-toolshop.test/account/settings
+URL: https://demo-toolshop.test/account/settings
+Browser: Chrome 156
+OS: Windows 10
 ```
