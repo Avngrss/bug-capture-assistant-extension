@@ -7,16 +7,14 @@ Sign in calls `POST /api/auth/session`, gets 500, and the page shows nothing. Th
 [Auth] /api/auth/session fails with HTTP 500
 
 ## Description
-On Sign in. The POST request to /api/auth/session fails with HTTP 500.
-
-Before that: Opened the home page. Clicked “Sign in”. Opened the login page. Entered a value in the Email field. Clicked “Sign in”.
+After clicking “Sign in”, the POST request to /api/auth/session fails with HTTP 500.
 
 ## Steps to Reproduce
-1. Opened the home page.
-2. Clicked “Sign in”.
-3. Opened the login page.
-4. Entered a value in the Email field.
-5. Clicked “Sign in”.
+1. Open the home page.
+2. Click “Sign in”.
+3. Open the login page.
+4. Enter a value in the Email field.
+5. Click “Sign in”.
 
 ## Actual Result
 The POST request to /api/auth/session fails with HTTP 500.

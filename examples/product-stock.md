@@ -7,18 +7,16 @@ Home → Hand tools → product, quantity 10, Add to cart. The page renders a `r
 [Product] Only 3 items left in stock
 
 ## Description
-On Combination Pliers. The page shows “Only 3 items left in stock”.
-
-Before that: Opened the home page. Opened the hand tools page. Clicked “Combination Pliers”. Opened the product page. Clicked “Add to cart”.
+After clicking “Add to cart” on Combination Pliers, the page shows “Only 3 items left in stock”.
 
 Shown as a page alert.
 
 ## Steps to Reproduce
-1. Opened the home page.
-2. Opened the hand tools page.
-3. Clicked “Combination Pliers”.
-4. Opened the product page.
-5. Clicked “Add to cart”.
+1. Open the home page.
+2. Open the hand tools page.
+3. Click “Combination Pliers”.
+4. Open the product page.
+5. Click “Add to cart”.
 
 ## Actual Result
 The page shows “Only 3 items left in stock”.

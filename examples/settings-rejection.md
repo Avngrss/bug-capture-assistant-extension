@@ -7,17 +7,15 @@ Save preferences throws inside an async handler. Nothing visible on the page, on
 [Account] Cannot read properties of undefined (reading 'theme')
 
 ## Description
-On Account settings. The browser console shows an error: “Cannot read properties of undefined (reading 'theme')”.
-
-Before that: Opened the home page. Opened the settings page. Selected the checkbox “Email me about new tools”. Clicked “Save preferences”.
+After clicking “Save preferences” on Account settings, the browser console shows an error: “Cannot read properties of undefined (reading 'theme')”.
 
 Recorded from the DevTools Console. It is an unhandled promise rejection.
 
 ## Steps to Reproduce
-1. Opened the home page.
-2. Opened the settings page.
-3. Selected the checkbox “Email me about new tools”.
-4. Clicked “Save preferences”.
+1. Open the home page.
+2. Open the settings page.
+3. Select the checkbox “Email me about new tools”.
+4. Click “Save preferences”.
 
 ## Actual Result
 The browser console shows an error: “Cannot read properties of undefined (reading 'theme')”.
