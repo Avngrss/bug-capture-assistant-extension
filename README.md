@@ -31,7 +31,7 @@ Most "AI bug reporters" try to guess root causes from vague prompts and hallucin
 
 ## Quick Install (No Build Required)
 
-1. Download [`releases/bug-capture-assistant-0.1.0-chrome.zip`](./releases/bug-capture-assistant-0.1.0-chrome.zip) (or the same file from [**Releases**](https://github.com/Avngrss/bug-capture-assistant-extension/releases) when published) and unzip it into a folder on your computer.
+1. Download [`releases/bug-capture-assistant-0.1.0-chrome.zip`](./releases/bug-capture-assistant-0.1.0-chrome.zip) (or the same file from [**Releases**](https://github.com/Avngrss/bug-capture-assistant-extension/releases)) and unzip it into a folder on your computer.
 2. Open **`chrome://extensions`** in Chrome or Edge (114+).
 3. Enable **Developer mode** (top-right toggle).
 4. Click **Load unpacked** and select the unzipped folder (the folder containing `manifest.json`).
@@ -56,6 +56,23 @@ Most "AI bug reporters" try to guess root causes from vague prompts and hallucin
 | **UI**      | Visible error elements matching CSS rules in **Settings** (defaults: `[role="alert"]`, `[aria-invalid="true"]`, `[data-testid="error-message"]`, `[data-qa="error-message"]`) |
 
 Need to match custom error banners or toasts on your project? Add your CSS selector under **Settings → Advanced UI issue rules**.
+
+---
+
+## Permissions — and Why Each One
+
+Chrome shows these when you load the extension. Each one serves capture on the tab you test, nothing else:
+
+| Permission | Why |
+| --- | --- |
+| Access to `http` / `https` sites | You choose the site to test, so the extension cannot know it in advance. It collects only on the tab you started capture on, and only while capture runs. |
+| `tabs` | Bind capture to one tab, follow its page changes, take a screenshot of what it shows. |
+| `scripting` | Start capture on a tab that was already open before the extension loaded. |
+| `storage` | Keep your settings and the current session on your computer. |
+| `notifications` | Tell you a potential bug was captured while the side panel is closed. |
+| `sidePanel` | Show the extension in Chrome's side panel. |
+
+**Nothing leaves your computer.** The extension makes no network requests of its own and has no server, account or analytics: open the extension's service worker in `chrome://extensions` → **Inspect views** → **Network** and see for yourself. Everything it captures stays in this browser.
 
 ---
 
