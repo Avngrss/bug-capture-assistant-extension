@@ -2,6 +2,8 @@
 
 **A bug appears. The useful context is already captured.**
 
+![Evidence-first capture flow](./examples/assets/bca-capture-flow.jpg)
+
 **Bug Capture Assistant** is a local-first Chrome extension (Manifest V3) for manual and exploratory QA testing. Instead of retracing steps, digging through DevTools Console and Network tabs, taking screenshots by hand, and writing a bug ticket from memory, you test the page as usual—and copy a structured QA ticket when something breaks.
 
 ---
@@ -56,6 +58,30 @@ Most "AI bug reporters" try to guess root causes from vague prompts and hallucin
 | **UI**      | Visible error elements matching CSS rules in **Settings** (defaults: `[role="alert"]`, `[aria-invalid="true"]`, `[data-testid="error-message"]`, `[data-qa="error-message"]`) |
 
 Need to match custom error banners or toasts on your project? Add your CSS selector under **Settings → Advanced UI issue rules**.
+
+---
+
+## Examples
+
+| Visual | Sample ticket output |
+| --- | --- |
+| ![Before vs after capture](./examples/assets/bca-before-after.jpg) | [UI alert on checkout](./examples/sample-ui-alert-ticket.md) |
+| | [Product page alert](./examples/sample-product-ui-ticket.md) |
+| | [Console error](./examples/sample-console-ticket.md) |
+
+The images are **explainer graphics** (workflow and pain vs outcome). The `.md` files show what **Copy ticket** delivers in v0.1. Real side-panel screenshots can be added under `examples/assets/` when you capture them locally.
+
+---
+
+## Roadmap (not in v0.1)
+
+v0.1 is **evidence capture + deterministic draft tickets** on your machine. Planned next steps:
+
+- **Optional on-device AI** (e.g. Chrome Prompt API) to polish tickets using the Senior QA rules already in the product—only after capture, never instead of facts.
+- **Session export** for sharing evidence bundles with a team.
+- **Tracker helpers** (Jira and others) once ticket quality is validated on real sites.
+
+Feedback on what to prioritize: [**Issues**](https://github.com/Avngrss/bug-capture-assistant-extension/issues).
 
 ---
 
