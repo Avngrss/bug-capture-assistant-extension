@@ -1,6 +1,6 @@
-# Example: UI alert on checkout (illustrative output)
+# Checkout — UI alert
 
-Captured while testing a checkout flow. This is the markdown **Copy ticket** produces in v0.1.
+Markdown from **Create ticket → Copy ticket** (v0.1).
 
 ```markdown
 ## Title
@@ -9,13 +9,17 @@ Captured while testing a checkout flow. This is the markdown **Copy ticket** pro
 ## Description
 On Checkout. The page shows “Payment unavailable”.
 
-Before that: Opened the checkout page. Clicked “Pay”.
+Before that: Opened the shop home page. Clicked “Products”. Opened the product page. Clicked “Add to cart”. Opened /checkout. Clicked “Pay”.
 
 Shown as a page alert.
 
 ## Steps to Reproduce
-1. Opened the checkout page.
-2. Clicked “Pay”.
+1. Opened the shop home page.
+2. Clicked “Products”.
+3. Opened the product page.
+4. Clicked “Add to cart”.
+5. Opened /checkout.
+6. Clicked “Pay”.
 
 ## Actual Result
 The page shows “Payment unavailable”.

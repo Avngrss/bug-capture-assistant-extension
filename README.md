@@ -1,9 +1,5 @@
 # Bug Capture Assistant
 
-**A bug appears. The useful context is already captured.**
-
-![Evidence-first capture flow](./examples/assets/bca-capture-flow.jpg)
-
 **Bug Capture Assistant** is a local-first Chrome extension (Manifest V3) for manual and exploratory QA testing. Instead of retracing steps, digging through DevTools Console and Network tabs, taking screenshots by hand, and writing a bug ticket from memory, you test the page as usual—and copy a structured QA ticket when something breaks.
 
 ---
@@ -61,15 +57,16 @@ Need to match custom error banners or toasts on your project? Add your CSS selec
 
 ---
 
-## Examples
+## Examples (ticket output)
 
-| Visual | Sample ticket output |
-| --- | --- |
-| ![Before vs after capture](./examples/assets/bca-before-after.jpg) | [UI alert on checkout](./examples/sample-ui-alert-ticket.md) |
-| | [Product page alert](./examples/sample-product-ui-ticket.md) |
-| | [Console error](./examples/sample-console-ticket.md) |
+What lands in your tracker after **Create ticket → Copy ticket**:
 
-The images are **explainer graphics** (workflow and pain vs outcome). The `.md` files show what **Copy ticket** delivers in v0.1. Real side-panel screenshots can be added under `examples/assets/` when you capture them locally.
+- [Checkout — UI alert](./examples/sample-ui-alert-ticket.md) (6 steps)
+- [Product page — UI alert](./examples/sample-product-ui-ticket.md)
+- [Checkout — UI + console + HTTP 500](./examples/sample-mixed-signals-ticket.md)
+- [Cart — console error](./examples/sample-console-ticket.md)
+
+Same Markdown structure every time: Title, Description (with captured signals), numbered steps, Actual/Expected, Severity, Priority, Labels, Environment.
 
 ---
 

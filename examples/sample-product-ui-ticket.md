@@ -1,6 +1,6 @@
-# Example: product page UI alert (illustrative output)
+# Product page — UI alert
 
-Shows short environment URLs and readable steps instead of opaque product IDs. Analytics `/g/collect` failures are not dumped into the ticket when UI is the main defect.
+Markdown from **Create ticket → Copy ticket** (v0.1).
 
 ```markdown
 ## Title
@@ -9,12 +9,16 @@ Shows short environment URLs and readable steps instead of opaque product IDs. A
 ## Description
 On Combination Pliers. The page shows “BCA second ui alert”.
 
-Before that: Opened the product page.
+Before that: Opened the shop home page. Clicked “Categories”. Clicked “Hand tools”. Opened the product page. Clicked “Add to cart”.
 
 Shown as a page alert.
 
 ## Steps to Reproduce
-1. Opened the product page.
+1. Opened the shop home page.
+2. Clicked “Categories”.
+3. Clicked “Hand tools”.
+4. Opened the product page.
+5. Clicked “Add to cart”.
 
 ## Actual Result
 The page shows “BCA second ui alert”.
