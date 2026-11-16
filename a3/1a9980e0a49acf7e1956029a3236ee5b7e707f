@@ -1,0 +1,19 @@
+README.md
+  s_7d7d097a6da4f5::t_2bceaa4eb201b1 34,62-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a31a9980e0a49acf7e1956029a3236ee5b7e707f",
+  "prompts": {},
+  "sessions": {
+    "s_7d7d097a6da4f5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_7d7d097a6da4f5",
+        "model": "unknown"
+      },
+      "human_author": "avngrss <sedow94@mail.ru>"
+    }
+  }
+}
