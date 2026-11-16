@@ -1,6 +1,22 @@
-# Showcase examples (public repo)
+# Examples
 
-Copy this folder to [bug-capture-assistant-extension](https://github.com/Avngrss/bug-capture-assistant-extension) as `examples/` when refreshing the storefront README.
+Each ticket here was produced by the built extension, not written by hand. A Playwright run loads `.output/chrome-mv3` into Chromium, clicks through a small local demo shop, then opens **Create ticket** in the side panel and saves the **Draft ticket** text as-is.
 
-- **`sample-*.md`** — output of **Copy ticket** from the v0.1 builder (regenerate: `npx vitest run tests/unit/showcase-examples.generate.test.ts` after removing `.skip` on the test).
-- **`assets/`** — optional real screenshots from your machine (side panel, ticket screen). No stock art.
+The only edit: the local server address (`http://127.0.0.1:<port>`) is replaced with `https://demo-toolshop.test`.
+
+| File                                             | What happens on the page                     |
+| ------------------------------------------------ | -------------------------------------------- |
+| [product-stock.md](./product-stock.md)           | Stock warning banner                         |
+| [checkout-payment.md](./checkout-payment.md)     | Alert + console error + HTTP 502 in one card |
+| [login-api.md](./login-api.md)                   | API returns 500, page shows nothing          |
+| [contact-validation.md](./contact-validation.md) | Inline validation message                    |
+| [settings-rejection.md](./settings-rejection.md) | Unhandled promise rejection only             |
+
+Screenshots in `assets/` come from the same run.
+
+Regenerate (private repo):
+
+```bash
+npm run build
+SHOWCASE_EXPORT=1 npx playwright test tests/extension/showcase-export.spec.ts
+```

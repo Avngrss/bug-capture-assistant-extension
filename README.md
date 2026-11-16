@@ -57,16 +57,22 @@ Need to match custom error banners or toasts on your project? Add your CSS selec
 
 ---
 
-## Examples (ticket output)
+## Examples
 
-Markdown from **Create ticket → Copy ticket** on a demo shop or [practicesoftwaretesting.com](https://practicesoftwaretesting.com/):
+Five bugs from one test pass on a demo shop, and the ticket for the checkout one:
 
-- [Contact form — invalid field](./examples/sample-ui-alert-ticket.md)
-- [Product page — stock alert](./examples/sample-product-ui-ticket.md)
-- [Checkout — pay button (UI + console + API)](./examples/sample-mixed-signals-ticket.md)
-- [Login — failed API](./examples/sample-network-api-ticket.md)
-- [Account — promise rejection](./examples/sample-console-ticket.md)
-- [Dashboard — manual mark](./examples/sample-manual-mark-ticket.md)
+<p>
+  <img src="./examples/assets/side-panel-summary.png" alt="Session summary with five potential bugs" width="300">
+  <img src="./examples/assets/side-panel-ticket.png" alt="Bug ticket screen for the checkout bug" width="300">
+</p>
+
+Full ticket text, exactly as the extension produced it:
+
+- [Product page: stock alert](./examples/product-stock.md)
+- [Checkout: payment fails (alert + console + HTTP 502)](./examples/checkout-payment.md)
+- [Sign in: API fails silently](./examples/login-api.md)
+- [Contact form: validation message](./examples/contact-validation.md)
+- [Settings: unhandled promise rejection](./examples/settings-rejection.md)
 
 ---
 
