@@ -1,28 +1,25 @@
-# Checkout — UI alert
+# Contact form — invalid field
 
-Markdown from **Create ticket → Copy ticket** (v0.1).
+Submit the contact form with a bad email. The ticket leads with the validation text, not a generic alert line.
 
 ```markdown
 ## Title
-[Checkout] Payment unavailable
+[Contact] Please enter a valid email address
 
 ## Description
-On Checkout. The page shows “Payment unavailable”.
+On Contact us. The page shows “Please enter a valid email address”.
 
-Before that: Opened the shop home page. Clicked “Products”. Opened the product page. Clicked “Add to cart”. Opened /checkout. Clicked “Pay”.
+Before that: Opened /contact. Clicked in Message. Clicked “Send”.
 
-Shown as a page alert.
+Shown on a field marked invalid.
 
 ## Steps to Reproduce
-1. Opened the shop home page.
-2. Clicked “Products”.
-3. Opened the product page.
-4. Clicked “Add to cart”.
-5. Opened /checkout.
-6. Clicked “Pay”.
+1. Opened /contact.
+2. Clicked in Message.
+3. Clicked “Send”.
 
 ## Actual Result
-The page shows “Payment unavailable”.
+The page shows “Please enter a valid email address”.
 
 ## Expected Result
 This message should not appear.
@@ -34,8 +31,8 @@ Major
 High
 
 ## Labels
-ui, checkout
+ui, contact
 
 ## Environment
-https://shop.test/checkout
+https://shop.test/contact
 ```

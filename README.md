@@ -59,26 +59,26 @@ Need to match custom error banners or toasts on your project? Add your CSS selec
 
 ## Examples (ticket output)
 
-What lands in your tracker after **Create ticket → Copy ticket**:
+Markdown from **Create ticket → Copy ticket** on a demo shop or [practicesoftwaretesting.com](https://practicesoftwaretesting.com/):
 
-- [Checkout — UI alert](./examples/sample-ui-alert-ticket.md) (6 steps)
-- [Product page — UI alert](./examples/sample-product-ui-ticket.md)
-- [Checkout — UI + console + HTTP 500](./examples/sample-mixed-signals-ticket.md)
-- [Cart — console error](./examples/sample-console-ticket.md)
-
-Same Markdown structure every time: Title, Description (with captured signals), numbered steps, Actual/Expected, Severity, Priority, Labels, Environment.
+- [Contact form — invalid field](./examples/sample-ui-alert-ticket.md)
+- [Product page — stock alert](./examples/sample-product-ui-ticket.md)
+- [Checkout — pay button (UI + console + API)](./examples/sample-mixed-signals-ticket.md)
+- [Login — failed API](./examples/sample-network-api-ticket.md)
+- [Account — promise rejection](./examples/sample-console-ticket.md)
+- [Dashboard — manual mark](./examples/sample-manual-mark-ticket.md)
 
 ---
 
-## Roadmap (not in v0.1)
+## What's next
 
-v0.1 is **evidence capture + deterministic draft tickets** on your machine. Planned next steps:
+Today the extension only collects what happened in the tab and formats a draft you can paste. Later I may add:
 
-- **Optional on-device AI** (e.g. Chrome Prompt API) to polish tickets using the Senior QA rules already in the product—only after capture, never instead of facts.
-- **Session export** for sharing evidence bundles with a team.
-- **Tracker helpers** (Jira and others) once ticket quality is validated on real sites.
+- A pass to clean up the wording in the draft on your machine (same steps and signals—you still edit before send).
+- Export of a session (screenshot + timeline) for handoff.
+- Paste helpers for Jira, Linear, or GitHub Issues.
 
-Feedback on what to prioritize: [**Issues**](https://github.com/Avngrss/bug-capture-assistant-extension/issues).
+Open an [**Issue**](https://github.com/Avngrss/bug-capture-assistant-extension/issues) if you want one of these sooner.
 
 ---
 

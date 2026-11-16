@@ -1,27 +1,25 @@
-# Cart — console error
+# Account — promise rejection
 
-Markdown from **Create ticket → Copy ticket** (v0.1).
+Console-only defect after sign-in; description calls out an unhandled rejection.
 
 ```markdown
 ## Title
-[Cart] TypeError: Cannot read properties of undefined
+[Account] Failed to load user profile
 
 ## Description
-On Cart. The browser console shows an error: “TypeError: Cannot read properties of undefined”.
+On Your account. The browser console shows an error: “Failed to load user profile”.
 
-Before that: Opened the product page. Clicked “Add to cart”. Opened /cart. Changed quantity to 2. Clicked “Update”.
+Before that: Opened /login. Clicked “Sign in”. Opened /account.
 
-Recorded from the DevTools Console. It is an uncaught page error. Seen 2 times in this session.
+Recorded from the DevTools Console. It is an unhandled promise rejection.
 
 ## Steps to Reproduce
-1. Opened the product page.
-2. Clicked “Add to cart”.
-3. Opened /cart.
-4. Changed quantity to 2.
-5. Clicked “Update”.
+1. Opened /login.
+2. Clicked “Sign in”.
+3. Opened /account.
 
 ## Actual Result
-The browser console shows an error: “TypeError: Cannot read properties of undefined”.
+The browser console shows an error: “Failed to load user profile”.
 
 ## Expected Result
 This console error should not occur.
@@ -33,8 +31,8 @@ Minor
 Low
 
 ## Labels
-console, cart
+console, account
 
 ## Environment
-https://shop.test/cart
+https://shop.test/account
 ```

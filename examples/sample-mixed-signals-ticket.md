@@ -1,6 +1,6 @@
-# Checkout — UI + console + failed API
+# Checkout — pay button
 
-Markdown from **Create ticket → Copy ticket** (v0.1).
+One capture window: banner on the page, console error, and POST /api/pay returning 500.
 
 ```markdown
 ## Title
