@@ -1,0 +1,23 @@
+demo/GUIDE.ru.md
+  s_3e25d330f8526f::t_ab1448d2b6b49b 1-184
+demo/README.md
+  s_3e25d330f8526f::t_36cb79cf83c0a1 7-8
+demo/assets/pages/shop.js
+  s_3e25d330f8526f::t_e94cef201f6e31 96-98,100-101,111,126-134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "17f085c8fee093c5f3dde79eb3f35af027c528da",
+  "prompts": {},
+  "sessions": {
+    "s_3e25d330f8526f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_3e25d330f8526f",
+        "model": "unknown"
+      },
+      "human_author": "avngrss <sedow94@mail.ru>"
+    }
+  }
+}
