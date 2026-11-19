@@ -4,6 +4,8 @@ A tiny online store with bugs planted on purpose. Use it to show or try the exte
 
 There's no backend. The store's API runs in the browser as a Service Worker ([`sw.js`](./sw.js)), so the demo works offline and sends no data anywhere.
 
+A detailed walkthrough in Russian (how to reproduce each bug, what is broken, what the extension catches and why it helps): [GUIDE.ru.md](./GUIDE.ru.md).
+
 ## Run it
 
 **Locally** (Node.js 18+, no install):

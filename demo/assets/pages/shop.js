@@ -93,7 +93,12 @@ function emptyState(query) {
   );
 }
 
+let shownQuery = '';
+let latestRequest = 0;
+
 async function loadProducts(query) {
+  const request = ++latestRequest;
+  shownQuery = query;
   grid.replaceChildren(el('p', { class: 'muted' }, 'Loading products…'));
   heading.textContent = query === '' ? 'All products' : `Results for “${query}”`;
   const path = query === '' ? 'products' : `products?q=${encodeURIComponent(query)}`;
@@ -103,6 +108,7 @@ async function loadProducts(query) {
   // API crashes on an apostrophe, and the page tells the customer there are
   // simply no such products.
   const products = response.ok ? (await response.json()).products : [];
+  if (request !== latestRequest) return; // a newer search has started
 
   countLabel.textContent = `${products.length} ${products.length === 1 ? 'item' : 'items'}`;
   if (products.length === 0) {
@@ -116,6 +122,15 @@ searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
   loadProducts(searchInput.value.trim());
 });
+
+// Clearing the field (typing, the × button or Esc) brings all products back.
+function showAllWhenCleared() {
+  if (searchInput.value.trim() === '' && shownQuery !== '') {
+    loadProducts('');
+  }
+}
+searchInput.addEventListener('input', showAllWhenCleared);
+searchInput.addEventListener('search', showAllWhenCleared);
 
 loadProducts('').catch((error) => {
   grid.replaceChildren(el('p', { class: 'muted' }, String(error.message ?? error)));
