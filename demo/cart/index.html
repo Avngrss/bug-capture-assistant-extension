@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cart | Corner Shop</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="module" src="../assets/pages/cart.js"></script>
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+    <main class="container page">
+      <h1>Your cart</h1>
+      <div class="two-columns">
+        <section id="cart-items" class="card list-card"></section>
+        <aside class="card summary-card">
+          <h2>Order summary</h2>
+          <dl class="totals">
+            <div><dt>Subtotal</dt><dd id="subtotal">$0.00</dd></div>
+            <div id="discount-row" hidden><dt>Discount</dt><dd id="discount">−$0.00</dd></div>
+            <div><dt>Delivery</dt><dd class="muted">Calculated at checkout</dd></div>
+            <div class="totals-total"><dt>Total</dt><dd id="total">$0.00</dd></div>
+          </dl>
+          <form id="promo-form" class="promo-form">
+            <div class="field">
+              <label for="promo">Promo code</label>
+              <span class="field-row">
+                <input id="promo" name="promo" autocomplete="off" placeholder="WELCOME10" />
+                <button class="btn btn-secondary" type="submit">Apply</button>
+              </span>
+            </div>
+            <p id="promo-message" class="field-hint"></p>
+          </form>
+          <a id="checkout-link" class="btn btn-primary btn-block" href="../checkout/">Proceed to checkout</a>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+  </body>
+</html>

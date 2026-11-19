@@ -45,6 +45,8 @@ Most "AI bug reporters" try to guess root causes from vague prompts and hallucin
 4. Click **Stop and review**.
 5. On any captured bug card, click **Create ticket** → **Copy ticket**, and paste the Markdown into Jira, Linear, GitHub Issues, or your tracker of choice.
 
+Want a page that is guaranteed to break? [**Corner Shop**](./demo/) is a small demo store with planted bugs: run `node demo/serve.mjs` and open http://localhost:4173/.
+
 ### What Triggers a Potential Bug Automatically?
 
 | Category    | What is captured                                                                                                                               |

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Corner Shop · demo store for Bug Capture Assistant</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script type="module">
+      import { mockApi } from './assets/app.js';
+      // Start the demo API early, so the first store page is ready at once.
+      mockApi().catch(() => undefined);
+    </script>
+  </head>
+  <body>
+    <main class="container page landing">
+      <section class="landing-hero">
+        <img src="assets/favicon.svg" width="56" height="56" alt="" />
+        <p class="eyebrow">Demo store for Bug Capture Assistant</p>
+        <h1>Corner Shop</h1>
+        <p class="lead">
+          A tiny online store with bugs planted on purpose. Start capture, shop as usual, and see what the extension
+          catches along the way.
+        </p>
+        <a class="btn btn-primary btn-large" href="sign-in/">Open the store</a>
+      </section>
+
+      <section class="card">
+        <h2>How to try it</h2>
+        <ol class="steps">
+          <li>
+            Install the extension:
+            <a href="https://github.com/Avngrss/bug-capture-assistant-extension#quick-install-no-build-required">quick install</a>.
+          </li>
+          <li>Open the store, click the extension icon, and press <strong>Start capture</strong>.</li>
+          <li>Shop as usual: sign in (password <code>demo1234</code>), search, add items, change quantities, apply a promo code, check out.</li>
+          <li>Press <strong>Stop and review</strong>, then <strong>Create ticket</strong> on any card.</li>
+        </ol>
+        <p class="muted small">
+          Everything runs in your browser. The store's API is a Service Worker on this page, so there is no server and
+          no data leaves your machine.
+        </p>
+      </section>
+
+      <details class="card spoilers">
+        <summary>What's broken (spoilers)</summary>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Page</th><th>Do this</th><th>What you notice</th><th>What really happened</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Shop</td>
+                <td>Search <code>men's watch</code></td>
+                <td>"No products match", like a normal empty result</td>
+                <td>The search API crashed on the apostrophe: HTTP 500</td>
+              </tr>
+              <tr>
+                <td>Shop</td>
+                <td>Add <em>Wireless Headphones</em>, then other items</td>
+                <td>"Added to your cart", the badge counts it</td>
+                <td>The save failed with HTTP 500. The headphones are not in the cart, and the badge quietly drops back there</td>
+              </tr>
+              <tr>
+                <td>Cart</td>
+                <td><strong>+</strong> on <em>Ceramic Mug</em> until 3</td>
+                <td>Something red flashes for a second</td>
+                <td>HTTP 409, only 2 in stock. The quantity still says 3</td>
+              </tr>
+              <tr>
+                <td>Cart</td>
+                <td>Apply <code>WELCOME10</code>, then again</td>
+                <td>The second click works</td>
+                <td>The first click crashed with a <code>TypeError</code>, for every customer</td>
+              </tr>
+              <tr>
+                <td>Checkout</td>
+                <td>Place the order</td>
+                <td>"Your order is placed"</td>
+                <td><code>POST /api/orders</code> failed with HTTP 500. There is no order</td>
+              </tr>
+              <tr>
+                <td>Checkout</td>
+                <td>Bonus: <em>Express courier</em></td>
+                <td>The store's own red banner</td>
+                <td>Default rules miss it. Add <code>.notice--error</code> in <strong>Settings → Advanced UI issue rules</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </main>
+  </body>
+</html>

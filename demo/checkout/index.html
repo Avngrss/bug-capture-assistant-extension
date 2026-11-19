@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout | Corner Shop</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="module" src="../assets/pages/checkout.js"></script>
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+    <main class="container page">
+      <h1>Checkout</h1>
+      <form id="checkout-form" class="two-columns">
+        <div class="stack">
+          <section class="card form-card">
+            <h2>Delivery address</h2>
+            <div class="form-grid">
+              <label class="field field--wide">
+                <span>Full name</span>
+                <input name="fullName" autocomplete="name" value="Alex Morgan" required />
+              </label>
+              <label class="field field--wide">
+                <span>Street address</span>
+                <input name="street" autocomplete="street-address" value="12 Maple Street, Apt 4" required />
+              </label>
+              <label class="field">
+                <span>City</span>
+                <input name="city" autocomplete="address-level2" value="Springfield" required />
+              </label>
+              <label class="field">
+                <span>Postcode</span>
+                <input name="postcode" autocomplete="postal-code" value="10115" required />
+              </label>
+            </div>
+          </section>
+
+          <section class="card form-card">
+            <h2>Delivery method</h2>
+            <div class="options">
+              <label class="option">
+                <input type="radio" name="delivery" value="standard" aria-label="Standard delivery" checked />
+                <span class="option-text"><strong>Standard</strong><small>3–5 business days</small></span>
+                <span class="option-price" data-price-for="standard">$4.99</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="delivery" value="express" aria-label="Express courier" />
+                <span class="option-text"><strong>Express courier</strong><small>Tomorrow, 9:00–18:00</small></span>
+                <span class="option-price" data-price-for="express">from $9.90</span>
+              </label>
+            </div>
+            <div id="delivery-notice"></div>
+          </section>
+
+          <section class="card form-card">
+            <h2>Payment</h2>
+            <div class="form-grid">
+              <label class="field field--wide">
+                <span>Card number</span>
+                <input name="cardNumber" autocomplete="cc-number" inputmode="numeric" value="4242 4242 4242 4242" required />
+              </label>
+              <label class="field">
+                <span>Expiry</span>
+                <input name="cardExpiry" autocomplete="cc-exp" value="12/29" required />
+              </label>
+              <label class="field">
+                <span>CVC</span>
+                <input name="cardCvc" autocomplete="cc-csc" inputmode="numeric" value="123" required />
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <aside class="card summary-card">
+          <h2>Your order</h2>
+          <div id="order-lines" class="order-lines"></div>
+          <dl class="totals">
+            <div><dt>Subtotal</dt><dd id="subtotal">$0.00</dd></div>
+            <div><dt>Delivery</dt><dd id="delivery-price">…</dd></div>
+            <div class="totals-total"><dt>Total</dt><dd id="total">$0.00</dd></div>
+          </dl>
+          <button id="place-order" class="btn btn-primary btn-block" type="submit">Place order</button>
+          <p class="muted small center">Payments are fake. No card is charged.</p>
+        </aside>
+      </form>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+  </body>
+</html>

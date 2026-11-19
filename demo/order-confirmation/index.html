@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Order placed | Corner Shop</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="module">
+      import { renderChrome } from '../assets/app.js';
+      renderChrome('order-confirmation');
+    </script>
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+    <main class="container page page--narrow">
+      <section class="card confirm-card">
+        <div class="confirm-icon" aria-hidden="true">✓</div>
+        <h1>Thank you! Your order is placed.</h1>
+        <p class="muted">We've emailed you the order details. Standard delivery takes 3–5 business days.</p>
+        <a class="btn btn-primary" href="../shop/">Continue shopping</a>
+      </section>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+  </body>
+</html>
