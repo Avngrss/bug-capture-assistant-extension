@@ -29,7 +29,7 @@ Most "AI bug reporters" try to guess root causes from vague prompts and hallucin
 
 ## Quick Install (No Build Required)
 
-1. Download [`releases/bug-capture-assistant-0.1.0-chrome.zip`](./releases/bug-capture-assistant-0.1.0-chrome.zip) (or the same file from [**Releases**](https://github.com/Avngrss/bug-capture-assistant-extension/releases)) and unzip it into a folder on your computer.
+1. Download [`releases/bug-capture-assistant-0.2.0-chrome.zip`](./releases/bug-capture-assistant-0.2.0-chrome.zip) (or the same file from [**Releases**](https://github.com/Avngrss/bug-capture-assistant-extension/releases)) and unzip it into a folder on your computer.
 2. Open **`chrome://extensions`** in Chrome or Edge (114+).
 3. Enable **Developer mode** (top-right toggle).
 4. Click **Load unpacked** and select the unzipped folder (the folder containing `manifest.json`).
