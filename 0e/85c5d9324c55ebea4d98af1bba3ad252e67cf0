@@ -1,0 +1,33 @@
+README.md
+  s_eb17811f3021f7::t_8331b9a0de4e49 13,24,26,32,55,60-61
+demo/GUIDE.ru.md
+  s_eb17811f3021f7::t_24cd2b8b7d85b4 12,22,48,135-149,172,174,179,187,197-199
+demo/README.md
+  s_eb17811f3021f7::t_bca6842334ae0b 34
+demo/assets/pages/order-confirmation.js
+  s_eb17811f3021f7::t_7cb77947bcc41e 1-41
+demo/index.html
+  s_eb17811f3021f7::t_8bb4899fbbe23b 83-88
+demo/order-confirmation/index.html
+  s_eb17811f3021f7::t_975426a3a99662 9,20-34
+demo/assets/styles.css
+  s_eb17811f3021f7::t_cfe35d7d5b415a 707-719
+demo/sw.js
+  s_eb17811f3021f7::t_f817cbf2c29567 224-231
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0e85c5d9324c55ebea4d98af1bba3ad252e67cf0",
+  "prompts": {},
+  "sessions": {
+    "s_eb17811f3021f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fa2ad4d9-18fd-4a83-84b5-fe9284ddb8c8",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "avngrss <sedow94@mail.ru>"
+    }
+  }
+}
