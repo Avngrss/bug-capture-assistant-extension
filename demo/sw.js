@@ -221,5 +221,13 @@ async function handle(request, route, query) {
     return json(500, { error: 'payment_gateway_timeout' });
   }
 
+  if (method === 'POST' && route === 'newsletter') {
+    await wait(400);
+    // PLANTED BUG: the mail service is down, but the API still answers
+    // HTTP 200 and puts the failure in the body. In the Network tab the
+    // request looks fine; the page checks only the status and celebrates.
+    return json(200, { success: false, error: 'Mail service unavailable' });
+  }
+
   return json(404, { error: 'not_found' });
 }

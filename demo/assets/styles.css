@@ -704,6 +704,19 @@ code {
   padding-block: 40px;
 }
 
+.newsletter-card {
+  margin-top: 16px;
+}
+
+.newsletter-card h2 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.newsletter-card .muted {
+  margin: 0 0 14px;
+}
+
 .confirm-icon {
   display: grid;
   place-items: center;

@@ -10,7 +10,7 @@ When an issue happens during exploratory testing, testers lose time reconstructi
 
 - What exact steps led to the error?
 - Was there a `console.error` or an unhandled promise rejection?
-- Did a `fetch` / `XHR` request fail with `4xx`/`5xx` or a timeout?
+- Did a `fetch` / `XHR` request fail with `4xx`/`5xx` or a timeout, or answer `200 OK` with an error inside?
 - Did a validation alert appear on the page?
 
 Most "AI bug reporters" try to guess root causes from vague prompts and hallucinate details. **Bug Capture Assistant** takes the opposite approach: **evidence-first, deterministic, and 100% local**. It captures real browser signals while you test, groups related events into a single **Potential bug**, attaches a viewport screenshot, and formats a ready-to-paste English bug ticket.
@@ -21,15 +21,15 @@ Most "AI bug reporters" try to guess root causes from vague prompts and hallucin
 
 - **Automatic Evidence Correlation** — Groups user actions, visible UI alerts, console errors, and failed network requests within a 3-second window on the same page into one **Potential bug** card.
 - **Readable Reproduction Steps** — Translates clicks, form submissions, inputs, and page navigations into clean human-readable steps (automatically stripping long query strings and opaque ULID/UUID path segments).
-- **Signal Without Noise** — Captures `HTTP 4xx/5xx`, timeouts, and failed requests while filtering out background analytics noise (such as `/g/collect`).
+- **Signal Without Noise** — Captures `HTTP 4xx/5xx`, timeouts, failed requests, and errors hidden inside `HTTP 200` JSON responses, while filtering out background analytics noise (such as `/g/collect`).
 - **One-Click Draft Ticket** — **Create ticket** generates a structured Markdown report (`Title`, `Description`, `Steps to Reproduce`, `Actual Result`, `Expected Result`, `Severity`, `Priority`, `Labels`, `Environment`) with the linked screenshot right above it.
-- **Privacy by Default** — Runs entirely on your machine. Sensitive URL parameters (`token`, `password`, `secret`, `session`, etc.) are redacted automatically, and text input values are never stored. No account, no cloud, and no external API keys required.
+- **Privacy by Default** — Runs entirely on your machine. Sensitive URL parameters (`token`, `password`, `secret`, `session`, etc.) are redacted automatically, text input values are never stored, and from a response only the error text is kept, never the body. No account, no cloud, and no external API keys required.
 
 ---
 
 ## Quick Install (No Build Required)
 
-1. Download [`releases/bug-capture-assistant-0.2.0-chrome.zip`](./releases/bug-capture-assistant-0.2.0-chrome.zip) (or the same file from [**Releases**](https://github.com/Avngrss/bug-capture-assistant-extension/releases)) and unzip it into a folder on your computer.
+1. Download [`releases/bug-capture-assistant-0.3.0-chrome.zip`](./releases/bug-capture-assistant-0.3.0-chrome.zip) (or the same file from [**Releases**](https://github.com/Avngrss/bug-capture-assistant-extension/releases)) and unzip it into a folder on your computer.
 2. Open **`chrome://extensions`** in Chrome or Edge (114+).
 3. Enable **Developer mode** (top-right toggle).
 4. Click **Load unpacked** and select the unzipped folder (the folder containing `manifest.json`).
@@ -52,10 +52,12 @@ Want a page that is guaranteed to break? [**Corner Shop**](./demo/) is a small d
 | Category    | What is captured                                                                                                                               |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Console** | `console.error`, uncaught exceptions, and unhandled promise rejections in the monitored tab                                                    |
-| **Network** | Failed `fetch` / `XHR` requests (`HTTP 4xx/5xx`, timeouts, aborted or failed transport)                                                        |
+| **Network** | Failed `fetch` / `XHR` requests (`HTTP 4xx/5xx`, timeouts, aborted or failed transport), and errors inside successful JSON responses: `HTTP 200` with `"success": false`, `"ok": false`, a non-empty `"error"`, or GraphQL `"errors"` |
 | **UI**      | Visible error elements matching CSS rules in **Settings** (defaults: `[role="alert"]`, `[aria-invalid="true"]`, `[data-testid="error-message"]`, `[data-qa="error-message"]`) |
 
 Need to match custom error banners or toasts on your project? Add your CSS selector under **Settings → Advanced UI issue rules**.
+
+**Errors inside `HTTP 200`.** Some APIs answer `200 OK` and report the failure in the body, so the request looks fine in DevTools. While capture runs, the extension reads JSON responses up to 256 KB on the captured tab, looks only at top-level fields such as `success`, `ok`, `status`, `error`, and `errors`, and keeps only the error text. The page still gets its response untouched. If a project uses these fields for something else, **Exclude** the card, or turn the check off in **Settings → Capture**.
 
 ---
 

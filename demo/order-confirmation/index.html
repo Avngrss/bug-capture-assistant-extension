@@ -6,10 +6,7 @@
     <title>Order placed | Corner Shop</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../assets/styles.css" />
-    <script type="module">
-      import { renderChrome } from '../assets/app.js';
-      renderChrome('order-confirmation');
-    </script>
+    <script type="module" src="../assets/pages/order-confirmation.js"></script>
   </head>
   <body>
     <header class="site-header" id="site-header"></header>
@@ -19,6 +16,21 @@
         <h1>Thank you! Your order is placed.</h1>
         <p class="muted">We've emailed you the order details. Standard delivery takes 3–5 business days.</p>
         <a class="btn btn-primary" href="../shop/">Continue shopping</a>
+      </section>
+
+      <section class="card newsletter-card" aria-labelledby="newsletter-title">
+        <h2 id="newsletter-title">Get 10% off your next order</h2>
+        <p class="muted">Subscribe to our newsletter, and we'll email you the code.</p>
+        <form id="newsletter-form" novalidate>
+          <div class="field">
+            <label for="newsletter-email">Email</label>
+            <span class="field-row">
+              <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+              <button class="btn btn-secondary" type="submit">Subscribe</button>
+            </span>
+          </div>
+          <p id="newsletter-message" class="field-hint" role="status"></p>
+        </form>
       </section>
     </main>
     <footer class="site-footer" id="site-footer"></footer>

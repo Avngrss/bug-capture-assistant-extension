@@ -31,6 +31,7 @@ Sign in with any email and password `demo1234`, start capture, then shop as usua
 | 3 | Cart | Click **+** on *Ceramic Mug* until it shows 3 | Something red flashes for a second. The quantity stays 3. | `PATCH /api/cart/items` → HTTP 409 (only 2 in stock), with the toast text and a screenshot taken while it was on screen. |
 | 4 | Cart | Apply `WELCOME10`. Nothing happens, so click **Apply** again | The second click works: −10%. | The first click crashed: `TypeError` in the console. Every customer hits it on the first try. |
 | 5 | Checkout | **Place order** | "Thank you! Your order is placed." | `POST /api/orders` → HTTP 500. There is no order. |
+| 6 | Order placed | **Subscribe** to the newsletter | "You're subscribed! Your 10% code is on its way." Even DevTools shows a green `200 OK`. | `POST /api/newsletter` → HTTP 200 with `{"success": false, "error": "Mail service unavailable"}` inside. No email will come. Needs extension 0.3.0 or later. |
 
 **Stop and review** shows a card for each. Open **Create ticket**: the steps lead to the exact click, even for the bug you noticed three screens later.
 
